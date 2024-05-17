@@ -1,10 +1,16 @@
 server:
-  port: 8761            # standard port used for Eureka Server
+  # Standard port used for Eureka Server.
+  port: 8761
 
 spring:
   application:
-    name: eureka        # acts as ID for the eureka discovery client
+    # Acts as ID for the Eureka Discovery Client used by other microservices.
+    name: eureka
+  output:
+    ansi:
+      enabled: ALWAYS
 
+# Prevent the Discovery Server from including itself in the service registry.
 eureka:
   client:
     fetch-registry: false
