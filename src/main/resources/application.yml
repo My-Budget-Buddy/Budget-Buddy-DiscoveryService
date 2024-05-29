@@ -12,6 +12,8 @@ spring:
 
 # Prevent the Discovery Server from including itself in the service registry.
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     fetch-registry: false
     register-with-eureka: false
