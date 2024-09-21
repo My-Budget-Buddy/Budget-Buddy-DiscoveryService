@@ -77,7 +77,7 @@ pipeline {
     environment {
         SERVICE_NAME = 'discovery-service'
         PASCAL_SERVICE_NAME = 'DiscoveryService'
-        NAMESPACE = 'discovery-service'
+        NAMESPACE = 'staging'
         // This is the Eureka server
         // EUREKA_URL = 'http://discovery.<namespace>.svc.cluster.local:8761/eureka'
     }
@@ -122,7 +122,7 @@ pipeline {
 
                     cd Budget-Buddy-Kubernetes/Databases
                     chmod +x ./deploy-database.sh
-                    ./deploy-database.sh ${NAMESPACE} ${SERVICE_NAME} $DATABASE_USERNAME $DATABASE_PASSWORD
+                    ./deploy-database.sh ${NAMESPACE} $DATABASE_USERNAME $DATABASE_PASSWORD
                     '''
                     }
                 }
